@@ -904,7 +904,7 @@ position = Vector2(-187, 98)
 
 [node name="ParallaxLayer_Sky" type="ParallaxLayer" parent="Tutorial_World/ParallaxBackground"]
 position = Vector2(98, -82)
-motion_mirroring = Vector2(960, 0)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial_World/ParallaxBackground/ParallaxLayer_Sky"]
 texture = ExtResource("3_au2rx")
@@ -912,15 +912,16 @@ texture = ExtResource("3_au2rx")
 [node name="ParallaxLayer_Clouds" type="ParallaxLayer" parent="Tutorial_World/ParallaxBackground"]
 position = Vector2(98, -82)
 motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(960, 0)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial_World/ParallaxBackground/ParallaxLayer_Clouds"]
 texture = ExtResource("4_6d8gq")
 
 [node name="ParallaxLayer_Clouds2" type="ParallaxLayer" parent="Tutorial_World/ParallaxBackground"]
+visible = false
 position = Vector2(98, -82)
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(960, 0)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial_World/ParallaxBackground/ParallaxLayer_Clouds2"]
 texture = ExtResource("5_yex3q")
@@ -928,7 +929,7 @@ texture = ExtResource("5_yex3q")
 [node name="ParallaxLayer_Buildings" type="ParallaxLayer" parent="Tutorial_World/ParallaxBackground"]
 position = Vector2(98, -82)
 motion_scale = Vector2(0.35, 0.35)
-motion_mirroring = Vector2(960, 0)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial_World/ParallaxBackground/ParallaxLayer_Buildings"]
 texture = ExtResource("6_yidh1")
@@ -936,7 +937,7 @@ texture = ExtResource("6_yidh1")
 [node name="ParallaxLayer_Fence" type="ParallaxLayer" parent="Tutorial_World/ParallaxBackground"]
 position = Vector2(98, -82)
 motion_scale = Vector2(0.6, 0.6)
-motion_mirroring = Vector2(960, 0)
+motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial_World/ParallaxBackground/ParallaxLayer_Fence"]
 texture = ExtResource("7_7a1c2")

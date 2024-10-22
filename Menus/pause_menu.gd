@@ -15,14 +15,10 @@ func _process(delta: float) -> void:
 			Engine.time_scale = 1
 
 
-
-
 func _on_play_pressed() -> void:
 	is_paused = false
 	visible = is_paused
 	Engine.time_scale = 1
-
-
 
 func _on_quit_pressed() -> void:
 	Engine.time_scale = 1

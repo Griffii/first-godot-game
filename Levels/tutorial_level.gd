@@ -14,8 +14,6 @@ func _ready() -> void:
 	enter_level()
 
 func _process(delta: float) -> void:
-	#if Input.is_action_just_pressed("pause"):
-		#pause()
 		pass
 
 func enter_level():
@@ -31,13 +29,3 @@ func _on_kill_plane_body_entered(body: Node2D) -> void:
 		player.fall_into_void(player_spawn_node)
 	if body.is_in_group("student"):
 		body.queue_free()  # Despawn npcs if they fall into the void
-
-#func pause():
-	#if paused:
-		#pause_menu.visible = false
-		#Engine.time_scale = 1
-	#else:
-		#pause_menu.visible = true
-		#Engine.time_scale = 0
-	#
-	#paused = !paused

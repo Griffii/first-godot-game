@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b20r7p25gf8a8"]
+[gd_scene load_steps=34 format=3 uid="uid://b20r7p25gf8a8"]
 
 [ext_resource type="Script" path="res://Entities/Player/hoodie_girl.gd" id="1_8awlb"]
 [ext_resource type="Texture2D" uid="uid://cbpy3aaiiincp" path="res://Entities/Player/Art/Player_SpriteSheet_V4.png" id="2_6k8bn"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://77pb63feqlcs" path="res://Assets/fonts/PixelOperator8.ttf" id="8_c555u"]
 [ext_resource type="Script" path="res://Entities/Player/States/dash_state.gd" id="10_itjjn"]
 [ext_resource type="Script" path="res://Entities/Player/States/grab_state.gd" id="11_2iheb"]
+[ext_resource type="Script" path="res://Entities/Player/States/chatting_state.gd" id="13_dwian"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amtyf"]
 radius = 6.5
@@ -389,12 +390,13 @@ animation_player = NodePath("../AnimationPlayer")
 character = NodePath("..")
 initial_state = NodePath("Ground")
 
-[node name="Ground" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("air_state", "crouch_state", "leash_state", "grab_state", "dash_state")]
+[node name="Ground" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("air_state", "crouch_state", "leash_state", "grab_state", "chatting_state", "dash_state")]
 script = ExtResource("5_ubs6t")
 air_state = NodePath("../Air")
 crouch_state = NodePath("../Crouch")
 leash_state = NodePath("../Leash")
 grab_state = NodePath("../Grab")
+chatting_state = NodePath("../Chatting")
 dash_state = NodePath("../Dash")
 
 [node name="Air" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("landing_state", "leash_state", "dash_state")]
@@ -435,6 +437,12 @@ crouch_state = NodePath("../Crouch")
 ground_state = NodePath("../Ground")
 idle_animation = "leash_hold"
 walk_animation = "leash_walk"
+
+[node name="Chatting" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("ground_state", "air_state")]
+script = ExtResource("13_dwian")
+ground_state = NodePath("../Ground")
+air_state = NodePath("../Air")
+can_move = false
 
 [node name="State_Label" type="Label" parent="."]
 visible = false

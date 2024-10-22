@@ -6,11 +6,11 @@ var is_chatting = false
 
 func _ready() -> void:
 	pass
-	#Dialogic.signal_event.connect() # If you need to recieve signlas from the dialogue timeine
+	#Dialogic.signal_event.connect(arg or func) # If you need to recieve signals from the dialogue timeine
 
 func _process(delta: float) -> void:
-	if player_in_area == true:
-		if Input.is_action_pressed("interact"):
+	if player_in_area == true and !is_chatting:
+		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue("teacher_1-1_quest01")
 
 

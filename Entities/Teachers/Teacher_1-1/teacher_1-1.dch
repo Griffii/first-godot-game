@@ -8,23 +8,12 @@
 "sound_moods": {},
 "style": "BubbleStyle"
 },
-"default_portrait": "New portrait",
+"default_portrait": "",
 "description": "Homeroom teacher of class 1-1",
 "display_name": "Teacher",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
-"portraits": {
-"New portrait": {
-"export_overrides": {
-"image": "\"res://Entities/Teachers/Teacher_1-1/Teacher_1-1_Portrait.png\""
-},
-"ignore_char_scale": true,
-"mirror": false,
-"offset": Vector2(0, -155),
-"scale": 0.1,
-"scene": ""
-}
-},
+"portraits": {},
 "scale": 1.0
 }

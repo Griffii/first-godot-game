@@ -44,7 +44,7 @@ func Enter():
 		leash_throw()
 
 func Update(_delta):
-	# Chcek for input
+	# Check for input
 	if Input.is_action_just_pressed("left_click"):
 		if is_leashed:
 			pull_leash()

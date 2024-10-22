@@ -52,7 +52,7 @@ func swap_scenes(scene_to_load:String, load_into:Node=null, scene_to_unload:Node
 	_load_content(scene_to_load)
 
 func _load_content(content_path:String) -> void:
-	print("Loading Start...")
+	#print("Loading Start...")
 	load_start.emit(_loading_screen)
 	
 	_content_path = content_path
@@ -67,7 +67,7 @@ func _load_content(content_path:String) -> void:
 	
 	get_tree().root.add_child(_load_progress_timer)   # NEW > insert loading bar into?
 	_load_progress_timer.start()
-	print("Loading Finish...")
+	#print("Loading Finish...")
 
 
 

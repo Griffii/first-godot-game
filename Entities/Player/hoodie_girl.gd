@@ -213,11 +213,6 @@ func reset_player_to(pos: Vector2):
 	visible = true
 	is_dead = false
 
-#func reset_player():
-	#global_position = Vector2(0,0)
-	#visible = true
-	#is_dead = false
-
 func disable():
 	is_dead = true
 	visible = false

@@ -29,7 +29,7 @@ func Exit():
 
 func Update(_delta):
 	# Always lsiten for these inputs
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("crouch"):
 		next_state = crouch_state
 
 func Physics_Update(delta):

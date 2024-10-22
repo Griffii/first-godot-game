@@ -6,6 +6,7 @@ class_name GroundState extends State
 @export var crouch_state : State
 @export var leash_state : State
 @export var grab_state : State
+@export var chatting_state : State
 @export var dash_state : State
 @export var jump_animation : String = "jump_start"
 @export var idle_animation : String = "idle"
@@ -13,7 +14,8 @@ class_name GroundState extends State
 
 
 func Enter():
-	pass
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
 func Exit():
 	pass
 
@@ -37,7 +39,7 @@ func state_input(event : InputEvent):
 
 func Update(_delta):
 	# Always lsiten for these inputs
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("crouch"):
 		next_state = crouch_state
 
 func Physics_Update(delta):
@@ -50,3 +52,8 @@ func Physics_Update(delta):
 	# If falling, change states
 	else:
 		next_state = air_state
+
+func _on_dialogic_signal(arguement: String):
+	print("Dialogic signal recieved: ", arguement)
+	if arguement == "chatting_start":
+		next_state = chatting_state

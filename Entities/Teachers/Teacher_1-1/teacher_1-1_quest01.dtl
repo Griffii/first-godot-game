@@ -1,10 +1,19 @@
-join teacher_1-1 center
-teacher_1-1: ... Come on guys, open the door....
-teacher_1-1: It's too early for this.
-teacher_1-1: ...
-[wait time="1.0" hide_text="false"]
-teacher_1-1: Oh. Hey.
-teacher_1-1: You think you could get in there and open the door?
-teacher_1-1: The kids locked me out, and I can't be bothered to deal with this right now.
-- Uh, sure?
-	teacher_1-1: Gee thanks. I'm just gonna wait here and drink my coffee.... *yawn*
+if {Quest01.quest_started} == false:
+	[signal arg="chatting_start"]
+	join teacher_1-1 center
+	teacher_1-1: ... Come on guys, open the door....
+	teacher_1-1: It's too early for this.
+	teacher_1-1: ...
+	[wait time="1.0" hide_text="false"]
+	teacher_1-1: Oh. Hey.
+	teacher_1-1: You think you could get in there and open the door?
+	teacher_1-1: The kids locked me out, and I can't be bothered to deal with this right now.
+	[wait time="0.1" hide_text="false" skippable="true"]
+	- Uh, sure?
+		set {Quest01.quest_started} = true
+		teacher_1-1: Gee thanks. I'm just gonna wait here and drink my coffee.... *yawn*
+	[signal arg="chatting_end"]
+	[end_timeline]
+if {Quest01.quest_started} == true:
+	if {Quest01.quest_finished} == false:
+		teacher_1-1: I'll be waiting out here... *sip*
